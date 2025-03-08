@@ -24,8 +24,8 @@ function wordcount_count_words($content){
     $stipt_content=strip_tags($content);
     $word_count=str_word_count( $stipt_content);
     $lebel=__('Total number count ', 'word-count');
-    $lebel=apply_filters("wordcount_heading", $lebel);     // For users editing
-    $tag=apply_filters("wordcount_tag",'h2');             // For users editing
+    $lebel=apply_filters("wordcount_heading", $lebel);     // Hok for users editing
+    $tag=apply_filters("wordcount_tag",'h2');             // Hok for users editing
     $content.=sprintf('<%s>%s:%s</%s>',$tag,$lebel,$word_count,$tag);
     return $content;
 
@@ -42,8 +42,8 @@ function wordcount_reading_time($content){
    $its_visiable=apply_filters('wordcount_display_readingtime',1);
    if($its_visiable){
     $lebel=__( 'Total Reading Time','word-count');
-    $lebel=apply_filters('wordcount_readingtime_heading',$lebel);   // For users editing
-    $tag=apply_filters('wordcount_readingtime_tag','h4');           // For users editing
+    $lebel=apply_filters('wordcount_readingtime_heading',$lebel);   // Hok for users editing
+    $tag=apply_filters('wordcount_readingtime_tag','h4');           // Hok for users editing
     $content.=sprintf('<%s>%s:%s minute %s Secounds</%s>',$tag, $lebel,$reading_per_minute,$reading_per_secound,$tag);
 
    }
@@ -51,3 +51,4 @@ function wordcount_reading_time($content){
 
 }
 add_filter('the_content','wordcount_reading_time');
+?>
